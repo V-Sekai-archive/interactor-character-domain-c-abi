@@ -25,7 +25,7 @@ Triaged against `docs/rectgtn.md`, `priv/schemas/rectgtn_domain.schema.json`,
 
 | # | Title | Type | Verdict | Priority |
 |---|-------|------|---------|----------|
-| 3 | Branch concurrency in temporal planning | enhancement | Valid, but the ship-side of #8 — fold in, do not track separately. | medium |
+| 3 | Branch concurrency in temporal planning | enhancement | **Folded into #8** as its "implement real concurrency" branch; closed on the tracker, not tracked separately. | medium |
 | 4 | `goal_methods` in `Taskweft.Compose` | doc/cleanup | **Verified:** absent from the schema (`additionalProperties:false`) yet merged at `compose.ex:52` and listed in both tables. | low |
 | 5 | Syntactic sugar `capabilities.entities` | needs-decision | **Verified inconsistency:** sugar exists for capabilities but not for action requirements. Decide keep/unship. | low |
 | 6 | Hardcoded ReBAC relations | bug / spec-drift | **Verified:** spec lists 9 relations incl. `CAN_ENTER`/`CAN_INSTANCE`; the Lean `RelationType` has 8 incl. `IS_A`. The sets differ. | high |
@@ -49,6 +49,7 @@ Triaged against `docs/rectgtn.md`, `priv/schemas/rectgtn_domain.schema.json`,
 ### Design calls needed
 
 - **#5**, **#8** — decide between unship and implement; each is a valid position.
+  #8 carries the concurrency branch folded in from #3, so the one call covers both.
 - **#7** — needs usage evidence.
 
 ### Roadmap
